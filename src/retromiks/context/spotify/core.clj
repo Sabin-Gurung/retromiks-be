@@ -34,12 +34,13 @@
 
 (comment
   (def token (get-token))
-  (get-playlist "07sZADfVm00IF6f355IAyI" token)
+  (get-playlist "07sZADfVm00IF6f355IAyI" (get-token))
   (playlist "07sZADfVm00IF6f355IAyI")
   conf/config
 
   (user/go)
   (user/reset)
+  (get-secrets)
 
   (->
     config

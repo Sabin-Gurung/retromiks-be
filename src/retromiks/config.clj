@@ -9,3 +9,8 @@
 (defn unset-config []
   (def config nil))
 
+
+(comment
+  (-> config
+    )
+  )
