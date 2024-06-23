@@ -1,3 +1,5 @@
 {:profile #profile {:default "dev" :prod "prod" :test "test"}
  :port #long #or [#env PORT 3000]
+ :spotify {:client_id #env SPOTIFY_CLIENT_ID
+           :client_secret #env SPOTIFY_CLIENT_SECRET}
  }

@@ -11,7 +11,7 @@
                             :parameters {:path [:map [:id string?]]}
                             :responses  {200 {:body map?}}
                             :handler    (fn [{{{id :id} :path} :parameters} ]
-                                          (resp/response {:id id})
+                                          (resp/response (c/playlist id))
                                           #_(resp/not-found {:message "resound not found"})
                                           )
                             }

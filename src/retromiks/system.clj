@@ -4,6 +4,7 @@
             [ring.adapter.jetty :as jetty]
             [retromiks.api :refer [create-handler]]
             [aero.core :as a]
+            [retromiks.config :as cnf]
             )
   )
 
@@ -31,11 +32,13 @@
 
 (defmethod i/init-key :app/config [_ {:keys [source profile]}]
   (let [config (a/read-config (clojure.java.io/resource source) {:profile profile})]
+    (cnf/set-config config)
     (println (str "config : " source " loaded. profile " (:profile config)))
     config))
 
 (defmethod i/halt-key! :app/config [_ config]
   (println config)
+  (cnf/unset-config)
   (println "config : Ended")
   )
 
